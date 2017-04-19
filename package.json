@@ -1,0 +1,26 @@
+{
+  "name": "stonebotty",
+  "version": "1.0.0",
+  "description": "discord bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": " "
+  },
+  "keywords": [
+    "discord",
+    "bot"
+  ],
+  "author": "Lucas Drufva",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.0.0",
+    "erlpack": "github:hammerandchisel/erlpack#master",
+    "node-opus": "^0.2.6",
+    "opusscript": "0.0.1",
+    "uws": "^0.14.1"
+  }
+}

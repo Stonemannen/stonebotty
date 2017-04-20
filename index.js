@@ -250,6 +250,7 @@ client.on('message', msg => {
   			msg.channel.sendMessage("`stone [*stone name*]` - Displays the stone you choose");
   			msg.channel.sendMessage("`liststone` - Displays a list of stones");
 				msg.channel.sendMessage("`invite` - Gives you a link to invite me to your server");
+				msg.channel.sendMessage("`info` - Gives you some info about me");
   		}
 
   	}

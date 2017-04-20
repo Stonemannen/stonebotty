@@ -15,6 +15,22 @@ var game = ['o',
 ' ',' ',' ',
 'x']
 
+function emptycells(game){
+	for(i = 0; i < 8; i++){
+		f = 0;
+		if(empty(game[i])){
+			empty[f] = i;
+			return empty;
+		}
+	}
+}
+
+function empty(cell){
+	if(cell == " "){
+		return true
+	}
+}
+
 function commandis(str, msg){
 	return msg.content.toLowerCase().startsWith("s!" + str);
 }
@@ -34,6 +50,13 @@ client.on('message', msg => {
   	if (commandis("liststone", msg)) {
     	msg.channel.sendMessage("List of stones:");
     	msg.channel.sendMessage("`gneiss`");
+			msg.channel.sendMessage("`west`");
+  	}
+
+		if (commandis("info", msg)) {
+    	msg.channel.sendMessage("Stonebotty is a open source discord bot");
+    	msg.channel.sendMessage("It runs on the node.js module Discord.js");
+			msg.channel.sendMessage("Github: https://github.com/Stonemannen/stonebotty");
   	}
 
 		if (commandis("invite", msg)) {
@@ -118,8 +141,10 @@ client.on('message', msg => {
   			if (args[1] == "1") {
   				if (gamestatus == 1) {
   					game[1] = game[0];
-						game[7] = game[0];
-						console.log(1);
+						emptycells = emptycells(game);
+
+						msg.channel.sendMessage("```    |	|	\n   "+game[1]+"|   "+game[2]+"|   "+game[3]+"\n----|----|----\n   "+game[4]+"|   "+game[5]+"|   "+game[6]+"\n	|	|	\n----|----|----\n   "+game[7]+"|   "+game[8]+"|   "+game[9]+"\n	|	|	```");
+						/*console.log(1);
   					msg.delete(100, err);
 						if(game[1]==game[0]&&game[2]==game[0]&&game[3]==game[0]||game[1]==game[0]&&game[4]==game[0]&&game[7]==game[0]||game[1]==game[0]&&game[5]==game[0]&&game[9]==game[0]){
 
@@ -139,6 +164,7 @@ client.on('message', msg => {
   						msg.channel.sendMessage("```    |	|	\n   "+game[1]+"|   "+game[2]+"|   "+game[3]+"\n----|----|----\n   "+game[4]+"|   "+game[5]+"|   "+game[6]+"\n	|	|	\n----|----|----\n   "+game[7]+"|   "+game[8]+"|   "+game[9]+"\n	|	|	```");
 
 						}
+						*/
   				}else{
 					msg.channel.sendMessage("You need to start the game first");
   				}

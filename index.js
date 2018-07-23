@@ -255,5 +255,5 @@ client.on('message', msg => {
 
   	}
 });
-
-client.login('MzAyNzY4NzY3NDAwOTM1NDI0.C9Ocbw.NKbZ6037DfqIxv1oKV4iosxuhH4');
+var myArgs = process.argv.slice(2);
+client.login(myArgs[0]);
